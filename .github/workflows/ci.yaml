@@ -53,10 +53,8 @@ jobs:
     steps:
     - uses: imranismail/setup-kustomize@v1
     - name: Input Formatting
-      env:
-        REPOSITORY_OWNER: github.repository_owner 
       run: |
-        echo "USERNAME=${env.REPOSITORY_OWNER,,}" >>${GITHUB_ENV}
+        echo "USERNAME=${GITHUB_REPOSITORY_OWNER,,}" >>${GITHUB_ENV}
     - name: Update env/dev image with Kustomize
       run: |
         git config --global user.name "Deploy Bot"
