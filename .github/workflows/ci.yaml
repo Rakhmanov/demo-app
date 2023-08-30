@@ -54,7 +54,7 @@ jobs:
     - uses: imranismail/setup-kustomize@v1
     - name: Input Formatting
       run: |
-        echo "USERNAME=${inputs.username,,}" >>${GITHUB_ENV}
+        echo "USERNAME=${github.repository_owner,,}" >>${GITHUB_ENV}
     - name: Update env/dev image with Kustomize
       run: |
         git config --global user.name "Deploy Bot"
